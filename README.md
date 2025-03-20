@@ -1,6 +1,6 @@
-# jukeblog
+# jukebox.rodeo
 
-jukeblog is a Svelte application. You can find it deployed at [](https://jukebox.rodeo)!
+jukebox.rodeo is a Svelte application. You might find it deployed at [jukebox.rodeo](https://jukebox.rodeo)!
 
 ## Running the Project
 
@@ -9,14 +9,15 @@ jukeblog is a Svelte application. You can find it deployed at [](https://jukebox
 You can pull the latest docker release of this project:
 
 ```bash
-$ docker pull registry.gitlab.com/the_jukebox/jukeblog/jukeblog:latest
+docker pull ghcr.io/thejukebox/jukeblog/jukeblog:latest
 ```
 
 And then you can run it:
 
 ```bash
-$ docker run -p 80:3000 egistry.gitlab.com/the_jukebox/jukeblog/jukeblog:latest &
-Listening on 0.0.0.0:3000
+docker run -p 3000:3000 ghcr.io/thejukebox/jukeblog/jukeblog:latest &
+# Or a specific tag
+docker run -p 3000:3000 ghcr.io/thejukebox/jukeblog/jukeblog:0.1.0 &
 ```
 
 You should now be able to reach the application from your browser at `http://127.0.0.1`.
@@ -27,13 +28,13 @@ You can build and run the project locally with npm and Node:
 
 ```bash
 # Clone the project
-$ git clone https://gitlab.com/the_jukebox/jukeblog.git
-$ cd jukeblog
+git clone https://gitlab.com/thejukebox/jukeblog.git
+cd jukeblog
 # Install the dependencies
-$ npm i
+npm i
 # Run the build and make it accessible
-$ npm run build
-$ npm run preview
+npm run build
+npm run preview
 
 > jukeblog@0.0.1 preview
 > vite preview
