@@ -4,7 +4,7 @@
 <ul class="navbar">
     <li class="navbar-button"><a href="/">home</a></li>
     <li class="navbar-button"><a href="/content">content</li>
-    <li class="navbar-button"><a href="https://gitlab.com/the_jukebox" target="blank" rel="noopener noreferrer">gitlab</a></li>
+    <li class="navbar-button"><a href="https://github.com/thejukebox" target="blank" rel="noopener noreferrer">github</a></li>
     <li class="navbar-button"><a href="https://terabytecowboy.bandcamp.com" target="blank" rel="noopener noreferrer">tunes</li>
     <li class="navbar-button"><a href="/projects">projects</li>
     <li class="navbar-title"><a href="/">jukebox.rodeo/</a></li>
