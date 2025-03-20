@@ -24,9 +24,9 @@ WORKDIR $APP_DIR
 
 RUN npm ci && \
     npm run build
-#RUN npm run build
+RUN npm install -g serve
 
 EXPOSE $APP_PORT
 
 ENTRYPOINT [ "/bin/ash", "-c" ]
-CMD [ "node build" ]
+CMD [ "serve -s build" ]

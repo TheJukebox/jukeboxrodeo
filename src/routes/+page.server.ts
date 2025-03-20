@@ -1,4 +1,5 @@
 import { render_markdown } from './content/content.ts';
+export const prerender = true
 
 export function load() {
     return {
