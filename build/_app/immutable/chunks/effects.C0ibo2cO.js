@@ -1,1 +1,0 @@
-function u(o,r,t){let n=document.getElementById(r);if(n==null){console.error("Tried to run print_page_effect, but "+r+" could not be found.");return}if(t>=o.length)return;n.innerHTML+=o[t++];let e=Math.floor(Math.random()*101);setTimeout(u,e,o,r,t)}export{u as p};
