@@ -1,16 +1,7 @@
 <script lang="ts">
-    /** @type {import('./content.ts'.FormattedFileStatsTuple)}*/
-    import { onMount } from 'svelte';
     import { print_effect } from '../effects.ts';
-    import 'highlight.js/styles/a11y-light.css';
-    
-    let posts: FormattedFileStatsTuple[] = [];
-
-    async function fetch_posts() {
-        const r = await fetch("/content");
-        const post_data = await r.json();
-        posts = post_data;
-    }
+    import { onMount } from 'svelte';
+    export let data;
 
     onMount(() => {
         print_effect(
@@ -18,15 +9,35 @@
             "ls_title",
             0
         );
-        fetch_posts();
-    })
+    });
+    
 </script>
 
 <div class="post_history" data-sveltekit-reload>
     <h2 class="title" id="ls_title">jukebox@rodeo:~$</h2>
     <h3>
-        {#each posts as post}
-            {post[0]} 1 jukebox jukebox <span class="file_size">{post[1]}</span> {post[2]} <a href="/content/{post[3]}" class="post_link">{post[3]}</a>
+        <span class="file_stats">drw-r--r-- 2 jukebox jukebox</span>
+        <span class="file_size">4096</span> 
+        Feb 04
+        <a class="post_link" href="content/">
+            .
+        </a>
+        <br>
+        <span class="file_stats">drw-r--r-- 4 jukebox jukebox
+            <span class="file_size">4096</span>
+            Feb 04
+            <a class="post_link" href="..">
+                ..
+            </a>
+        </span>
+        <br>
+        {#each data.posts as post}
+            -rw-r--r-- 1 jukebox jukebox
+            <span class="file_size">{post.size}</span> 
+            {post.date}
+            <a class="post_link" href="content/{post.name}">
+                {post.name}
+            </a>
             <br>
         {/each}
     </h3>
@@ -61,7 +72,9 @@
     }
 
     div.post_history span.file_size {
-        white-space: pre-wrap;
+        display: inline-block;
+        text-align: right;
+        min-width: 4ch;
     }
 
     div.post_history a.post_link {
